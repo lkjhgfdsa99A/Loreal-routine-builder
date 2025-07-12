@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'Oréal | Smart Routine &amp; Product Advisor</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!------- Header / Branding ------->
+      <header class="site-header">
+        <div class="decoration"></div>
+        <div class="decoration"></div>
+        <div class="decoration"></div>
+        <img src="loreal-logo.png" alt="L'Oréal Logo" class="logo" />
+        <h1 class="site-title">Beauty Genius</h1>
+      </header>
+
+      <!-- Search and Filter Section -->
+      <div class="search-section">
+        <input 
+          type="text" 
+          id="productSearch" 
+          placeholder="Search products by name or keyword..."
+          autocomplete="off"
+        />
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="cleanser">Cleansers</option>
+          <option value="moisturizer">Moisturizers</option>
+          <option value="skincare">Skincare</option>
+          <option value="haircare">Haircare</option>
+          <option value="makeup">Makeup</option>
+          <option value="hair color">Hair Color</option>
+          <option value="hair styling">Hair Styling</option>
+          <option value="men's grooming">Men's Grooming</option>
+          <option value="suncare">Suncare</option>
+          <option value="fragrance">Fragrance</option>
+        </select>
+      </div>
+
+      <!-- Products Grid -->
+      <div id="productsContainer" class="products-grid">
+        <div class="placeholder-message">
+          Discover our curated collection of premium beauty products
+        </div>
+      </div>
+
+      <!-- Selected Products -->
+      <div class="selected-products">
+        <h2>Selected Products</h2>
+        <div id="selectedProductsList"></div>
+        <button id="generateRoutine" class="generate-btn" disabled>
+          <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Routine
+        </button>
+        <button id="clearSelection" class="clear-btn">
+          <i class="fa-solid fa-trash"></i> Clear All
+        </button>
+      </div>
+
+      <!------- Chat Area ------->
+      <section class="chatbox">
+        <h2>Let's Build Your Routine</h2>
+        <div id="chatWindow" class="chat-window">
+          <div class="placeholder-message">
+            Select products and generate your personalized routine to begin
+          </div>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+          <label for="userInput" class="visually-hidden">Message</label>
+          <input
+            id="userInput"
+            name="userInput"
+            type="text"
+            placeholder="Ask me about products or routines…"
+            autocomplete="off"
+            required
+          />
+          <button type="submit" id="sendBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span class="visually-hidden">Send</span>
+          </button>
+        </form>
+      </section>
+
+      <!------- Footer Links ------->
+      <footer class="site-footer">
+        <div class="footer-content">
+          <img src="loreal-logo.png" alt="L'Oréal Logo" class="footer-logo" />
+          <div class="footer-tagline">BECAUSE YOU'RE WORTH IT</div>
+          <div class="footer-copyright">&copy; 2025 L'Oréal Paris. All rights reserved.</div>
+          <nav class="footer-nav">
+            <a href="https://www.loreal.com/en/terms-of-use/" target="_blank" rel="noopener">Terms of Use</a>
+            <a href="https://www.loreal.com/en/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+            <a href="https://www.loreal.com/en/usa/articles/contact-us/consumer-inquiries-usa/" target="_blank" rel="noopener">Contact</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Load API configuration and main script -->
+    <script src="AIservices.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
